@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{768281BB-5239-4011-864E-1F88D9A463BB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>informationSystemN</RootNamespace>
+    <AssemblyName>informationSystemN</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ElementsUI\eventCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElementsUI\eventCard.Designer.cs">
+      <DependentUpon>eventCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Activity.cs" />
+    <Compile Include="Entities\Branches.cs" />
+    <Compile Include="Entities\City.cs" />
+    <Compile Include="Entities\Country.cs" />
+    <Compile Include="Entities\Event.cs" />
+    <Compile Include="Entities\Model1.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Forms\entryPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\entryPoint.Designer.cs">
+      <DependentUpon>entryPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ownerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ownerForm.Designer.cs">
+      <DependentUpon>ownerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\loginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\loginForm.Designer.cs">
+      <DependentUpon>loginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\f.cs" />
+    <Compile Include="Functions\getDatabaseColonum.cs" />
+    <Compile Include="Functions\getReader.cs" />
+    <Compile Include="Functions\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ElementsUI\eventCard.resx">
+      <DependentUpon>eventCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\entryPoint.resx">
+      <DependentUpon>entryPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ownerForm.resx">
+      <DependentUpon>ownerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\loginForm.resx">
+      <DependentUpon>loginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Снимок экрана 2022-10-13 161858.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Documents\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EventPhoto\1.jpeg" />
+    <Content Include="EventPhoto\10.jpg" />
+    <Content Include="EventPhoto\11.jpg" />
+    <Content Include="EventPhoto\12.jpg" />
+    <Content Include="EventPhoto\13.jpg" />
+    <Content Include="EventPhoto\14.png" />
+    <Content Include="EventPhoto\15.jpg" />
+    <Content Include="EventPhoto\16.jpg" />
+    <Content Include="EventPhoto\17.jpg" />
+    <Content Include="EventPhoto\18.jpeg" />
+    <Content Include="EventPhoto\19.jpg" />
+    <Content Include="EventPhoto\2.jpeg" />
+    <Content Include="EventPhoto\20.jpg" />
+    <Content Include="EventPhoto\3.jpeg" />
+    <Content Include="EventPhoto\4.jpeg" />
+    <Content Include="EventPhoto\5.png" />
+    <Content Include="EventPhoto\6.jpg" />
+    <Content Include="EventPhoto\7.jpg" />
+    <Content Include="EventPhoto\8.jpeg" />
+    <Content Include="EventPhoto\9.jpg" />
+    <Content Include="Resources\1.jpeg" />
+    <Content Include="Resources\13.jpg" />
+    <Content Include="Resources\fotoOrg1.jpg" />
+    <Content Include="Resources\fotoOrg2.jpg" />
+    <Content Include="Resources\fotoOrg3.jpg" />
+    <Content Include="Resources\fotoOrg4.jpg" />
+    <Content Include="Resources\fotoOrg5.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
